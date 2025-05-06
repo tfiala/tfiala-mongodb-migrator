@@ -1,10 +1,10 @@
 use std::{net::SocketAddr, sync::Arc};
 
 use axum::{
+    Router,
     extract::{Path, State},
     http::StatusCode,
     routing::post,
-    Router,
 };
 use tokio::{net::TcpListener, sync::Mutex};
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};

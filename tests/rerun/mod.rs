@@ -6,7 +6,7 @@ use tfiala_mongodb_migrator::{
     migration::Migration, migration_record::MigrationRecord, migration_status::MigrationStatus,
 };
 
-use super::utils::{init_migrator_with_migrations, TestDb, M0, M1, M2, M3};
+use super::utils::{M0, M1, M2, M3, TestDb, init_migrator_with_migrations};
 
 pub async fn picks_only_failed(t: &TestDb) {
     let migration_record = MigrationRecord::migration_succeeded(MigrationRecord::migration_start(

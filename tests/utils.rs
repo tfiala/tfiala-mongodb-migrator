@@ -4,11 +4,11 @@ use mongodb::Database;
 use serde_derive::{Deserialize, Serialize};
 use testcontainers_modules::{
     mongo::Mongo,
-    testcontainers::{runners::AsyncRunner, ContainerAsync},
+    testcontainers::{ContainerAsync, runners::AsyncRunner},
 };
 use tfiala_mongodb_migrator::{
     migration::Migration,
-    migrator::{shell::ShellConfig, Env},
+    migrator::{Env, shell::ShellConfig},
 };
 
 pub struct TestDb {

@@ -18,7 +18,7 @@ updates are integrated into the authoritative repo.
 
 ```toml
 [dependencies]
-tfiala-mongodb-migrator = "0.2.1"
+tfiala-mongodb-migrator = "0.2.2"
 ```
 
 ## Functionality
@@ -111,6 +111,6 @@ struct Users {
 - [x] RESTful service
 - [ ] As npm package
 - [ ] Stragegies
- 	- [x] Fail first
- 	- [ ] Try all
- 	- [ ] Retries
+  - [x] Fail first
+  - [ ] Try all
+  - [ ] Retries

@@ -1,5 +1,5 @@
 //! These tests check how single migration run works
-use super::utils::{init_migrator_with_migrations, TestDb, M0, M1, M2};
+use super::utils::{M0, M1, M2, TestDb, init_migrator_with_migrations};
 use bson::Bson;
 use futures::stream::StreamExt;
 use mongodb::options::FindOptions;

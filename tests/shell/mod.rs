@@ -3,10 +3,10 @@ use async_trait::async_trait;
 use serde_derive::{Deserialize, Serialize};
 use tfiala_mongodb_migrator::{
     migration::Migration,
-    migrator::{shell::ShellConfig, Env},
+    migrator::{Env, shell::ShellConfig},
 };
 
-use super::utils::{init_shell_migrator_with_migrations, TestDb};
+use super::utils::{TestDb, init_shell_migrator_with_migrations};
 
 pub async fn shell(t: &TestDb) {
     let host_port = t.node.get_host_port_ipv4(27017).await.unwrap();
@@ -21,13 +21,13 @@ pub async fn shell(t: &TestDb) {
         .await
         .unwrap();
 
-    assert!(t
-        .db
-        .collection::<Users>("users")
-        .find_one(bson::doc! {"name": "Superman"})
-        .await
-        .unwrap()
-        .is_some());
+    assert!(
+        t.db.collection::<Users>("users")
+            .find_one(bson::doc! {"name": "Superman"})
+            .await
+            .unwrap()
+            .is_some()
+    );
 }
 
 pub struct M0 {}

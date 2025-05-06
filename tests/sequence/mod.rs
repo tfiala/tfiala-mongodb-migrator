@@ -5,7 +5,7 @@ use tfiala_mongodb_migrator::{
     migration::Migration, migration_record::MigrationRecord, migration_status::MigrationStatus,
 };
 
-use super::utils::{init_migrator_with_migrations, TestDb, Users, M0, M1, M2};
+use super::utils::{M0, M1, M2, TestDb, Users, init_migrator_with_migrations};
 
 // M0 -> M1 -> M2
 pub async fn migrations_executed_in_specified_order(t: &TestDb) {
@@ -73,13 +73,13 @@ pub async fn migrations_not_just_saved_as_executed_but_really_affected_target(t:
         .await
         .unwrap();
 
-    assert!(t
-        .db
-        .collection::<Users>("users")
-        .find_one(bson::doc! {"x": 2})
-        .await
-        .unwrap()
-        .is_some());
+    assert!(
+        t.db.collection::<Users>("users")
+            .find_one(bson::doc! {"x": 2})
+            .await
+            .unwrap()
+            .is_some()
+    );
 }
 
 // M2 -> M1 -> M0

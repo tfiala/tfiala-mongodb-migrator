@@ -24,12 +24,13 @@ pub async fn basic(node: &ContainerAsync<Mongo>) {
         .await
         .unwrap();
 
-    assert!(db
-        .collection::<Users>("users")
-        .find_one(bson::doc! {"name": "Superman"})
-        .await
-        .unwrap()
-        .is_some());
+    assert!(
+        db.collection::<Users>("users")
+            .find_one(bson::doc! {"name": "Superman"})
+            .await
+            .unwrap()
+            .is_some()
+    );
 }
 
 struct M0 {}

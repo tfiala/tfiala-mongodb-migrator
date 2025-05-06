@@ -1,8 +1,8 @@
 [package]
 name = "tfiala-mongodb-migrator"
-version = "0.2.1"
+version = "0.2.2"
 authors = ["Todd Fiala <todd.fiala@gmail.com"]
-edition = "2021"
+edition = "2024"
 description = "MongoDB migrations management tool (fork of kakoc/mongodb_migrator with all deps updated)"
 readme = "README.md"
 repository = "https://github.com/tfiala/tfiala-mongodb-migrator"

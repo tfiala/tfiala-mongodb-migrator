@@ -6,8 +6,8 @@ use futures::StreamExt;
 use mongodb::results::InsertOneResult;
 
 use super::{
-    shell::Shell, with_connection::WithConnection, with_retries::Retry,
-    with_shell_config::WithShellConfig, Env,
+    Env, shell::Shell, with_connection::WithConnection, with_retries::Retry,
+    with_shell_config::WithShellConfig,
 };
 use crate::{
     error::MigrationExecution, migration::Migration, migration_record::MigrationRecord,
