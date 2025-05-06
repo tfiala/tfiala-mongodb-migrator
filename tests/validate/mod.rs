@@ -1,6 +1,6 @@
 //! These tests check whether passed migrations doesn't contain duplicates
 use super::utils::{init_migrator_with_migrations, TestDb, M0, M1, M2};
-use mongodb_migrator::{error::MigrationExecution, migration::Migration};
+use tfiala_mongodb_migrator::{error::MigrationExecution, migration::Migration};
 
 pub async fn validation_fails_when_passed_with_duplicates(t: &TestDb) {
     let migrations: Vec<Box<dyn Migration>> =

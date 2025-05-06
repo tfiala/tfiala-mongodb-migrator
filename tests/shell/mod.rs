@@ -1,10 +1,10 @@
 use anyhow::Result;
 use async_trait::async_trait;
-use mongodb_migrator::{
+use serde_derive::{Deserialize, Serialize};
+use tfiala_mongodb_migrator::{
     migration::Migration,
     migrator::{shell::ShellConfig, Env},
 };
-use serde_derive::{Deserialize, Serialize};
 
 use super::utils::{init_shell_migrator_with_migrations, TestDb};
 

@@ -1,11 +1,11 @@
 [package]
-name = "mongodb-migrator"
-version = "0.1.8"
-authors = ["Konstantin Matsiushonak <k.matushonok@gmail.com"]
+name = "tfiala-mongodb-migrator"
+version = "0.2.0"
+authors = ["Todd Fiala <todd.fiala@gmail.com"]
 edition = "2021"
-description = "MongoDB migrations management tool"
+description = "MongoDB migrations management tool (fork of kakoc/mongodb_migrator with all deps updated)"
 readme = "README.md"
-repository = "https://github.com/kakoc/mongodb_migrator"
+repository = "https://github.com/tfiala/tfiala-mongodb-migrator"
 license = "MIT OR Apache-2.0"
 categories = ["database"]
 keywords = ["mongodb"]

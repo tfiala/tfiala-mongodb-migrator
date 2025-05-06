@@ -1420,33 +1420,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "mongodb-migrator"
-version = "0.1.8"
-dependencies = [
- "anyhow",
- "async-trait",
- "axum",
- "bson",
- "chrono",
- "futures",
- "hyper",
- "hyper-util",
- "log",
- "mongodb",
- "rusty-hook",
- "serde",
- "serde_derive",
- "serde_json",
- "testcontainers",
- "testcontainers-modules",
- "thiserror 2.0.12",
- "tokio",
- "tracing",
- "tracing-subscriber",
- "version-sync",
-]
-
-[[package]]
 name = "nias"
 version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2299,6 +2272,33 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f29549c522bd43086d038c421ed69cdf88bc66387acf3aa92b26f965fa95ec2"
 dependencies = [
  "testcontainers",
+]
+
+[[package]]
+name = "tfiala-mongodb-migrator"
+version = "0.2.0"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "axum",
+ "bson",
+ "chrono",
+ "futures",
+ "hyper",
+ "hyper-util",
+ "log",
+ "mongodb",
+ "rusty-hook",
+ "serde",
+ "serde_derive",
+ "serde_json",
+ "testcontainers",
+ "testcontainers-modules",
+ "thiserror 2.0.12",
+ "tokio",
+ "tracing",
+ "tracing-subscriber",
+ "version-sync",
 ]
 
 [[package]]

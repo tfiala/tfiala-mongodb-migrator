@@ -1,14 +1,14 @@
 use anyhow::Result;
 use async_trait::async_trait;
 use mongodb::Database;
-use mongodb_migrator::{
-    migration::Migration,
-    migrator::{shell::ShellConfig, Env},
-};
 use serde_derive::{Deserialize, Serialize};
 use testcontainers_modules::{
     mongo::Mongo,
     testcontainers::{runners::AsyncRunner, ContainerAsync},
+};
+use tfiala_mongodb_migrator::{
+    migration::Migration,
+    migrator::{shell::ShellConfig, Env},
 };
 
 pub struct TestDb {
@@ -32,8 +32,8 @@ impl TestDb {
 pub fn init_migrator_with_migrations(
     db: Database,
     migrations: Vec<Box<dyn Migration>>,
-) -> mongodb_migrator::migrator::with_migrations_vec::WithMigrationsVec {
-    mongodb_migrator::migrator::default::DefaultMigrator::new()
+) -> tfiala_mongodb_migrator::migrator::with_migrations_vec::WithMigrationsVec {
+    tfiala_mongodb_migrator::migrator::default::DefaultMigrator::new()
         .with_conn(db)
         .with_migrations_vec(migrations)
 }
@@ -43,8 +43,8 @@ pub fn init_shell_migrator_with_migrations(
     db: Database,
     shell_config: ShellConfig,
     migrations: Vec<Box<dyn Migration>>,
-) -> mongodb_migrator::migrator::with_migrations_vec::WithMigrationsVec {
-    mongodb_migrator::migrator::default::DefaultMigrator::new()
+) -> tfiala_mongodb_migrator::migrator::with_migrations_vec::WithMigrationsVec {
+    tfiala_mongodb_migrator::migrator::default::DefaultMigrator::new()
         .with_conn(db)
         .with_shell_config(shell_config)
         .with_migrations_vec(migrations)

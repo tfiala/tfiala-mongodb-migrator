@@ -1,7 +1,7 @@
 //! This tests crate contains tests that check state when a migration failed
 use bson::{self, Bson};
 use futures::stream::StreamExt;
-use mongodb_migrator::{
+use tfiala_mongodb_migrator::{
     migration::Migration, migration_record::MigrationRecord, migration_status::MigrationStatus,
 };
 

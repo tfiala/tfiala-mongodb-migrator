@@ -2,7 +2,7 @@
 //! when there are already executed migrations from the the previous "release"
 use bson::{self, Bson};
 use futures::stream::StreamExt;
-use mongodb_migrator::{
+use tfiala_mongodb_migrator::{
     migration::Migration, migration_record::MigrationRecord, migration_status::MigrationStatus,
 };
 

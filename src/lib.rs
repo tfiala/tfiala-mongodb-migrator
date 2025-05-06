@@ -11,7 +11,7 @@
 //! use mongodb::Database;
 //! use serde_derive::{Deserialize, Serialize};
 //!
-//! use mongodb_migrator::{migration::Migration, migrator::Env};
+//! use tfiala_mongodb_migrator::{migration::Migration, migrator::Env};
 //! use testcontainers_modules::{
 //!     mongo::Mongo,
 //!     testcontainers::{runners::AsyncRunner, ContainerAsync},
@@ -26,7 +26,7 @@
 //!     let db = client.database("test");
 //!
 //!     let migrations: Vec<Box<dyn Migration>> = vec![Box::new(M0 {}), Box::new(M1 {})];
-//!     mongodb_migrator::migrator::default::DefaultMigrator::new()
+//!     tfiala_mongodb_migrator::migrator::default::DefaultMigrator::new()
 //!         .with_conn(db.clone())
 //!         .with_migrations_vec(migrations)
 //!         .up()

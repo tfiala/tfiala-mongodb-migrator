@@ -3,7 +3,7 @@ use super::utils::{init_migrator_with_migrations, TestDb, M0, M1, M2};
 use bson::Bson;
 use futures::stream::StreamExt;
 use mongodb::options::FindOptions;
-use mongodb_migrator::{migration::Migration, migration_record::MigrationRecord};
+use tfiala_mongodb_migrator::{migration::Migration, migration_record::MigrationRecord};
 
 // M0 -> M1 -> M2
 pub async fn migrations_executed_in_single_manner(t: &TestDb) {

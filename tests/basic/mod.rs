@@ -5,7 +5,7 @@ use futures::stream::StreamExt;
 use serde_derive::{Deserialize, Serialize};
 use testcontainers_modules::{mongo::Mongo, testcontainers::ContainerAsync};
 
-use mongodb_migrator::{
+use tfiala_mongodb_migrator::{
     migration::Migration, migration_record::MigrationRecord, migration_status::MigrationStatus,
     migrator::Env,
 };
@@ -17,7 +17,7 @@ pub async fn basic(node: &ContainerAsync<Mongo>) {
     let db = client.database("test");
 
     let migrations: Vec<Box<dyn Migration>> = vec![Box::new(M0 {}), Box::new(M1 {})];
-    mongodb_migrator::migrator::default::DefaultMigrator::new()
+    tfiala_mongodb_migrator::migrator::default::DefaultMigrator::new()
         .with_conn(db.clone())
         .with_migrations_vec(migrations)
         .up()
@@ -84,7 +84,7 @@ pub async fn custom_collection_name(node: &ContainerAsync<Mongo>) {
     }
     let migrations: Vec<Box<dyn Migration>> = vec![Box::new(M0 {})];
 
-    mongodb_migrator::migrator::default::DefaultMigrator::new()
+    tfiala_mongodb_migrator::migrator::default::DefaultMigrator::new()
         .with_conn(db.clone())
         .with_migrations_vec(migrations)
         .set_collection_name("foo")

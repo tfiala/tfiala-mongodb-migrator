@@ -6,12 +6,12 @@ use futures::stream::StreamExt;
 use hyper::{Request, StatusCode};
 use hyper_util::{client::legacy::Client, rt::TokioExecutor};
 use mongodb::Database;
-use mongodb_migrator::{
+use testcontainers_modules::{mongo::Mongo, testcontainers::runners::AsyncRunner};
+use tfiala_mongodb_migrator::{
     migration::Migration,
     migration_record::MigrationRecord,
     server::{self, DbParams, MigratorParams, ServiceParams},
 };
-use testcontainers_modules::{mongo::Mongo, testcontainers::runners::AsyncRunner};
 
 #[tokio::test]
 pub async fn server_runs_migrations_by_id() {

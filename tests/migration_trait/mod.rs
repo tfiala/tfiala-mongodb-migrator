@@ -1,7 +1,7 @@
 //! These tests check whether passed migrations doesn't contain duplicates
 use anyhow::Result;
 use async_trait::async_trait;
-use mongodb_migrator::{migration::Migration, migrator::Env};
+use tfiala_mongodb_migrator::{migration::Migration, migrator::Env};
 
 struct M0 {}
 
