@@ -10,6 +10,14 @@ jobs:
   coverage:
     runs-on: ubuntu-24.04
     steps:
+      - name: Install mongosh command
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget gnupg
+          wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+          echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+          sudo apt-get update
+          sudo apt-get install -y mongodb-mongosh
       - uses: actions/checkout@v4
       - name: Install Rust
         run: rustup toolchain install nightly --profile minimal --component llvm-tools-preview
