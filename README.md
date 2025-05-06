@@ -39,12 +39,12 @@ use anyhow::Result;
 use async_trait::async_trait;
 use mongodb::Database;
 use serde_derive::{Deserialize, Serialize};
-use tfiala_testcontainers_modules::{
+use testcontainers_modules::{
     mongo::Mongo,
     testcontainers::{runners::AsyncRunner, ContainerAsync},
 };
 
-use mongodb_migrator::migration::Migration;
+use tfiala_mongodb_migrator::migration::Migration;
 
 #[tokio::main]
 async fn main() -> Result<()> {
