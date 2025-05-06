@@ -9,7 +9,7 @@ Mongodb migrations management tool.
 ## NOTE: this is a fork of [mongodb_migrator](https://github.com/kakoc/mongodb_migrator)
 
 This is a (hopefully temporary) fork of the excellent work done by the
-Konstantin Matsiushonak (k.matushonok@gmail.com) at [kakoc/mongodb_migrator](https://github.com/kakoc/mongodb_migrator). The primary
+Konstantin Matsiushonak (<k.matushonok@gmail.com>) at [kakoc/mongodb_migrator](https://github.com/kakoc/mongodb_migrator). The primary
 change is updating all dependencies to latest, most notably the mongodb driver. I needed
 this for a mongo 3.x driver-based project.  Expect this fork to go away once the dependency
 updates are integrated into the authoritative repo.
@@ -18,10 +18,11 @@ updates are integrated into the authoritative repo.
 
 ```toml
 [dependencies]
-tfiala-mongodb-migrator = "0.2.0"
+tfiala-mongodb-migrator = "0.2.1"
 ```
 
 ## Functionality
+
 - [Execute Rust based migrations][1]
 - [Execute JavaScript based migrations][2]
 - [Run as library][4]
@@ -110,9 +111,6 @@ struct Users {
 - [x] RESTful service
 - [ ] As npm package
 - [ ] Stragegies
-	- [x] Fail first
-	- [ ] Try all
-	- [ ] Retries
-
-
-
+ 	- [x] Fail first
+ 	- [ ] Try all
+ 	- [ ] Retries
