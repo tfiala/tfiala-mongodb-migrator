@@ -23,7 +23,7 @@ authoritative repo.
 
 ```toml
 [dependencies]
-tfiala-mongodb-migrator = "0.2.4"
+tfiala-mongodb-migrator = "0.2.5"
 ```
 
 ## Functionality
@@ -50,7 +50,13 @@ use testcontainers_modules::{
     testcontainers::{runners::AsyncRunner, ContainerAsync},
 };
 
-use tfiala_mongodb_migrator::migration::Migration;
+use tfiala_mongodb_migrator::{
+    migration::Migration,
+    migrator::{
+        default::DefaultMigrator,
+        env::Env,
+    },
+};
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -61,7 +67,7 @@ async fn main() -> Result<()> {
     let db = client.database("test");
 
     let migrations: Vec<Box<dyn Migration>> = vec![Box::new(M0 {}), Box::new(M1 {})];
-    tfiala_mongodb_migrator::migrator::DefaultMigrator::new()
+    DefaultMigrator::new()
         .with_conn(db.clone())
         .with_migrations_vec(migrations)
         .up()
@@ -75,9 +81,10 @@ struct M1 {}
 
 #[async_trait]
 impl Migration for M0 {
-    async fn up(&self, db: Database) -> Result<()> {
+    async fn up(&self, env: Env) -> Result<()> {
+        let db = env.db().await?;
         db.collection("users")
-            .insert_one(bson::doc! { "name": "Batman" }, None)
+            .insert_one(bson::doc! { "name": "Batman" })
             .await?;
 
         Ok(())
@@ -86,12 +93,12 @@ impl Migration for M0 {
 
 #[async_trait]
 impl Migration for M1 {
-    async fn up(&self, db: Database) -> Result<()> {
+    async fn up(&self, env: Env) -> Result<()> {
+        let db = env.db().await?;
         db.collection::<Users>("users")
             .update_one(
                 bson::doc! { "name": "Batman" },
                 bson::doc! { "$set": { "name": "Superman" } },
-                None,
             )
             .await?;
 

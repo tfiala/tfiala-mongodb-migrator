@@ -1,6 +1,6 @@
 [package]
 name = "tfiala-mongodb-migrator"
-version = "0.2.4"
+version = "0.2.5"
 authors = ["Todd Fiala <todd.fiala@gmail.com"]
 edition = "2024"
 description = "MongoDB migrations management tool (fork of kakoc/mongodb_migrator with all deps updated)"
