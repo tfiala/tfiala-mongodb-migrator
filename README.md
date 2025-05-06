@@ -9,24 +9,29 @@ Mongodb migrations management tool.
 ## NOTE: this is a fork of [mongodb_migrator](https://github.com/kakoc/mongodb_migrator)
 
 This is a (hopefully temporary) fork of the excellent work done by the
-Konstantin Matsiushonak (<k.matushonok@gmail.com>) at [kakoc/mongodb_migrator](https://github.com/kakoc/mongodb_migrator). The primary
-change is updating all dependencies to latest, most notably the mongodb driver. I needed
-this for a mongo 3.x driver-based project.  Expect this fork to go away once the dependency
-updates are integrated into the authoritative repo.
+Konstantin Matsiushonak (<k.matushonok@gmail.com>) at [kakoc/mongodb_migrator](https://github.com/kakoc/mongodb_migrator).
+
+The primary changes:
+
+* updated all dependencies to latest, notably the mongodb driver (2.x -> 3.x)
+* updated Rust version 2024
+
+Expect this fork to go away once the dependency updates are integrated into the
+authoritative repo.
 
 ## Setup
 
 ```toml
 [dependencies]
-tfiala-mongodb-migrator = "0.2.2"
+tfiala-mongodb-migrator = "0.2.3"
 ```
 
 ## Functionality
 
-- [Execute Rust based migrations][1]
-- [Execute JavaScript based migrations][2]
-- [Run as library][4]
-- [Run as RESTful service][3]
+* [Execute Rust based migrations][1]
+* [Execute JavaScript based migrations][2]
+* [Run as library][4]
+* [Run as RESTful service][3]
 
 [1]: https://github.com/kakoc/mongodb_migrator/blob/main/examples/as_lib.rs
 [2]: https://github.com/kakoc/mongodb_migrator/blob/main/tests/shell/mod.rs
@@ -102,15 +107,15 @@ struct Users {
 
 ## Roadmap
 
-- [x] Rust based migrations
-- [x] JavaScript based migrations
-- [x] Logging
-- [x] Rollbacks
-- [ ] Cli tool
-- [ ] UI dashboard
-- [x] RESTful service
-- [ ] As npm package
-- [ ] Stragegies
-  - [x] Fail first
-  - [ ] Try all
-  - [ ] Retries
+* [x] Rust based migrations
+* [x] JavaScript based migrations
+* [x] Logging
+* [x] Rollbacks
+* [ ] Cli tool
+* [ ] UI dashboard
+* [x] RESTful service
+* [ ] As npm package
+* [ ] Stragegies
+  * [x] Fail first
+  * [ ] Try all
+  * [ ] Retries
