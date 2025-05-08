@@ -23,7 +23,7 @@ authoritative repo.
 
 ```toml
 [dependencies]
-tfiala-mongodb-migrator = "0.2.5"
+tfiala-mongodb-migrator = "0.2.6"
 ```
 
 ## Functionality
